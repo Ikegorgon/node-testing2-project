@@ -4,7 +4,7 @@ const checkIdExists = (req, res, next) => {
     Movies.findById(req.params.id)
         .then(movie => {
             if(movie.length === 0) {
-                next({status:404, message: "Movie not found"})
+                next({status:404, message: "Movie not found."})
             } else {
                 req.movie = movie
                 next()
